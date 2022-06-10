@@ -1,0 +1,70 @@
+body{
+    margin: 0 auto;
+    max-width: 960px;
+    background-color: whitesmoke;
+}
+
+#main{
+    background-color:azure;
+}
+
+div{
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: aliceblue;
+}
+
+span{
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+}
+
+option{
+    padding: 5px;
+    display: inline-block;
+}
+
+img{
+    margin:0 auto;
+}
+
+#figures ul{
+    list-style-type: none;
+  margin: 0 auto;
+  padding: 10px;
+  overflow: hidden;
+  
+}
+
+#figures ul li{
+    display: inline;
+    float: left;
+    
+}
+
+figure{
+    padding: 10px;
+}
+
+figcaption{
+    text-align: center;
+}
+
+#seventhQuestion ul{
+    list-style-type: none;
+}
+
+#submit{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+}

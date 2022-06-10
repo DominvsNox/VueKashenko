@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>VueKashenko</title>
+</head>
+<body>
+    <div id="main">
+        <center>
+            <h1>VueKashenko Project</h1>
+        </center>
+
+        <div id="firstQuestion">
+            <span>А я вам сейчас покажу {{question1.selected}}</span>
+            <ul>
+                <li v-for="option in question1.options">
+                    <input  type="radio" name="q1" id="option.id" :value="option.text" v-model="question1.selected">
+                    <label for="option.id">{{option.text}}</label>
+                </li>
+            </ul>
+        </div>
+
+        <div id="secondQuestion">
+            <span>готовилось {{question2.selected}}</span>
+            <nav id="figures">
+                <ul>
+                    <li v-for="option in question2.options">
+                        <figure >
+                            <img :src="option.url">
+                        </figure>
+                        <figcaption>
+                            <input type="radio" id="option.id" :value="option.text" v-model="question2.selected">
+                            <label for="option.id">{{option.text}}</label>
+                        </figcaption>
+                    </li>
+                </ul>
+            </nav> 
+        </div>
+
+        <div id="thirdQuestion">
+            <span>И, если бы за {{question3.selected}} часов до операции</span>
+            <br/>
+            
+            <select name="beforeOperation" v-model="question3.selected" size="2">
+                <option v-for="option in question3.options" :value="option.number">{{option.value}}</option>
+            </select>
+        </div>
+    
+        <div id="fourthQuestion" style="height: 80px;">
+            <span>Не был нанесен {{question4.preventiveStrike}}</span>
+                <br>
+                <input type="text" v-model="question4.preventiveStrike" size="50" placeholder="Введите пропуск">
+                <br>
+                <span>По позициям: </span>
+                <select name="Positions" v-model="question4.positions">
+                    <option disabled value="">Выберите кол-во позиций</option>
+                    <option v-for="option in question4.options" :value="option">{{option}}</option>
+                </select>
+        </div>
+    
+        <div id="fifthQuestion">
+            <span>я щас покажу {{question5.selected}}</span>
+            <ol>
+                <li v-for="option in question5.options">
+                    <input  type="radio" name="q5" id="option.id" :value="option.text" v-model="question5.selected">
+                    <label for="option.id">{{option.text}}</label>
+                </li>
+            </ol>
+        </div>
+        <div id="sixthQuestion">
+            <span>Они бы атаковали наши войска</span>
+            <br>
+            <input type="checkbox" id="r" v-model="question6.selectedR" true-value="россии" false-value="мордора">
+            <label for="r">россии</label>
+            <br>
+            <input type="checkbox" id="b" v-model="question6.selectedB" true-value="беларуси" false-value="изенгарда">
+            <label for="b">беларуси</label>
+            <br>
+        </div>
+        <div id="seventhQuestion">
+            <span>которые были {{question7.selected}}</span>
+            <ul>
+                <li v-for="option in question7.options">
+                    <input type="radio" :value="option.text" id="option.id" v-model="question7.selected">
+                    <label for="option.id">{{option.text}}</label>
+                </li>
+            </ul>
+        </div>
+        <div id="eighthQuestion">
+            <span>Поэтому не мы развязали </span>
+            <br>
+            <ol>
+                <li v-for="val in question8.values">
+                    <input type="checkbox" id="val.id" v-model="val.selected" :true-value="val.text" :false-value="">
+                    <label for="val.id">{{val.text}}</label>
+                </li>
+            </ol>
+        </div>
+        <div id="ninethQuestion">
+            <span>Путин хyul0?</span>
+            <ul>
+                <li v-for="val in question9.values">
+                    <input type="checkbox" id="val.id" v-model="val.selected">
+                    <label for="val.id">{{val.text}}</label>
+                </li>
+            </ul>
+            
+        </div>
+
+        <div id="result" style="height: 150px;">
+            <button id="submit" @click="resultIt" @click="resultOfQuestion8">Done!</button>
+            <br>
+            <textarea v-model="message" style="width: 99%; height: 60%;" placeholder="Here you'll see the result" readonly></textarea>
+            
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+</html>
